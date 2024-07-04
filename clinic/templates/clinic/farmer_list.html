@@ -1,0 +1,62 @@
+{% extends 'clinic/base.html' %}
+{% block content %}
+<br>
+{% if request.user.is_authenticated %}
+<center> <p> Welcome: {{request.user}}</p> </center>
+{% else %}
+<a href = "{% url 'login' %}">Login</a>
+{% endif %}
+
+<hr>
+<h5> <strong> <center> Parameters for crop prediction </center> </strong> </h5>
+
+          <table class="table" id="printable">
+              <thead>
+                <tr>
+                  <th scope="col">User Name</th>
+                  <th scope="col">First Name</th>
+                  <th scope="col">Second Name</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Farm Id</th>
+                  <th scope="col">Nitrogen</th>
+                  <th scope="col">Phosphorus</th>
+                  <th scope="col">Potassium</th>
+                  <th scope="col">Temperature</th>
+                  <th scope="col">Humidity</th>
+                  <th scope="col">Ph Scale</th>
+                  <th scope="col">Rainfall</th>
+                  <th scope="col">Crop Predicted</th>
+                  <th scope="col"></th> 
+                  <th scope="col"></th>   
+                </tr>
+              </thead>
+              <tbody>
+                {% for task in tasks %}
+                <tr>
+                  <td> {{ task.user_name }} </td>
+                  <td> {{ task.first_name }} </td>
+                  <td> {{ task.second_name }} </td>
+                  <td> {{ task.phone }} </td>
+                  <td> {{ task.address }} </td>
+                  <td> {{ task.farm_id }} </td>
+                  <td> {{ task.N }} </td>
+                  <td> {{ task.P }} </td>
+                  <td> {{ task.K }} </td>
+                  <td> {{ task.temperature }} </td>
+                  <td> {{ task.humidity }} </td>
+                  <td> {{ task.ph }} </td>
+                  <td> {{ task.rainfall }} </td>
+                  <td> {{ task.label }} </td>
+                  <td> <a href = "{% url 'task-update' task.id %}" class="btn btn-success">Edit</a></td>
+                  <td> <a href = "{% url 'task-delete' task.id %}" class="btn btn-danger">Delete</a></td>
+                </tr>
+              </tbody>
+                {% empty %}
+  <p>No parameters entered!!!</p> 
+  {% endfor %}
+            </table>
+      </div>  
+  </div>
+</div>
+{% endblock %}

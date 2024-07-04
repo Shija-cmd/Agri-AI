@@ -3,7 +3,7 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.urls import reverse_lazy
-from .models import Patient
+from .models import Farmer
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView
@@ -35,32 +35,32 @@ class RegisterPage(FormView):
         return super(RegisterPage, self).get(*args, **kwargs)         
 
 class TaskList(LoginRequiredMixin, ListView):
-    model = Patient
+    model = Farmer
     context_object_name = 'tasks'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['tasks'] = context['tasks'].filter(jina_la_mtumiaji=self.request.user)
+        context['tasks'] = context['tasks'].filter(user_name=self.request.user)
         context['count'] = context['tasks'].filter(complete=False).count()
         return context
     
 class TaskDetail(LoginRequiredMixin, DetailView):
-    model = Patient
+    model = Farmer
     context_object_name = 'tasks'
     template_name = 'clinic/task.html'
     
 class TaskCreate(LoginRequiredMixin, CreateView):
-    model = Patient
+    model = Farmer
     fields = '__all__'
     success_url = reverse_lazy('tasks')
      
 class TaskUpdate(LoginRequiredMixin, UpdateView):
-    model = Patient
+    model = Farmer
     fields = '__all__'
     success_url = reverse_lazy('tasks')
     
 class DeleteView(LoginRequiredMixin, DeleteView):
-    model = Patient
+    model = Farmer
     context_object_name = 'task'
     success_url = reverse_lazy('tasks')
         

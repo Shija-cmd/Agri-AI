@@ -16,7 +16,7 @@
 				<div class="card-body p-5">
 	<br>
 	<center>
-	<h1 class="fs-4 card-title fw-bold mb-4">MFUMO WA KLINIKI YA KIELEKTRONIKI YA MAGONJWA YA ZINAA</h1>
+	<h1 class="fs-4 card-title fw-bold mb-4">CROPS RECOMMENDATION SYSTEM</h1>
 	</center>
 	<hr>
 				</div>
@@ -31,9 +31,9 @@
 					<div class="card shadow-lg">
 						<div class="card-body p-5">
 
-<a href = "{% url "tasks" %}" class = "btn btn-success"> Rudi Nyuma </a>
+<a href = "{% url "tasks" %}" class = "btn btn-success">Back</a>
 <form method = 'POST'>
     {% csrf_token %}
-    <p> Una uhakika unataka kufuta hizi taarifa?</p>
+    <p> Are you sure you want to delete these information?</p>
     <input type = "submit" value = "Futa" class="btn btn-danger"/>
 </form>

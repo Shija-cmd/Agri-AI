@@ -12,9 +12,9 @@
     <title>{% block title %}Home{% endblock %}</title>
   </head>
 {% load crispy_forms_tags %}
-<center> <h3> Dalili za mgonjwa </center> </h3>
-<center> <a href = {% url 'tasks'%} class="btn btn-success">Rudi nyuma</a> </center>
-<p> <center> Karibu {{request.user}}, Ingiza taarifa zako na dalili unazohisi, kisha hospitali iliyopo karibu na wewe </center><p>
+<center> <h3> Parameters for crops prediction </center> </h3>
+<center> <a href = {% url 'tasks'%} class="btn btn-success">Back</a> </center>
+<p> <center> Welcome {{request.user}}, Enter the values for crops prediction</center><p>
  
  
 <form method = "POST" action = "">
