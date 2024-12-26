@@ -4,13 +4,13 @@
 ### Team members - Juma Shija
 
 ### Roles:
-The team member will work on the Django framework, where the main roles include developing the backend and front end. Training the dataset using machine learning, then deploying the machine learning model in the system developed using the Django framework.
-These roles are to develop the crop recommender system completely using machine learning techniques and the Django framework.
+The team members worked on the Django framework, where the main roles included developing the backend and front end, training the dataset using machine learning, and deploying the machine learning model in the system developed using the Django framework.
+These roles are to completely develop the crop recommender system using machine learning techniques and the Django framework.
 
 ### Technologies:
 Technologies included in this project are machine learning and web development using Python 3.8+.
 Libraries for machine learning are Scikit-learn, Keras, TensorFlow, Matplotlib, NumPy, SciPy, Pandas, Theano, and Seaborn.
-The Django library that can be used for this project is the Django REST Framework for optimising and simplifying the process of creating RESTful APIs.
+The Django library that can be used for this project is the Django REST Framework, which optimises and simplifies the process of creating RESTful APIs.
 Languages for the Django framework include Javascript, HTML, CSS, and Python 3.8+. Also, the language for machine learning is Python 3.8+.
 A platform for machine learning is TensorFlow, and Django is for web systems. The framework for developing the system is Django. 
 The hardware required includes a fifth-generation CPU, GPU, and memory with no less than 512 GB, 10 GbE, or 40 GbE ports. Also, a machine learning system requires storage devices; most hardware used in developing a machine learning system uses NVMe drives instead of SATA SSDs.
